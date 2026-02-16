@@ -47,3 +47,22 @@ maBibliotheque.ajouterLivre({ titre: "1984", auteur: "George Orwell" });
 maBibliotheque.ajouterLivre({ titre: "Le Petit Prince", auteur: "Antoine de Saint-Exupéry" });
 //console.log(maBibliotheque.catalogue); // Erreur : Propriété 'catalogue' est privée et n'est accessible que dans la classe 'Bibliotheque'.
 console.log(maBibliotheque.obtenirCatalogue());
+
+//  Exercice 3 : Introduction aux Génériques ()
+
+class Boite<T> {
+    private contenu: T;
+
+    constructor(contenu: T) {
+        this.contenu = contenu;
+    }
+
+    public regarder(): T {
+        return this.contenu;
+    }
+}
+
+const boiteAString = new Boite<string>("Bonjour");
+const boiteANumber = new Boite<number>(42);
+console.log(boiteAString.regarder());
+console.log(boiteANumber.regarder());

@@ -22,3 +22,28 @@ function afficherEtat(commande: Commande): void {
 
 afficherEtat({ id: 1, statut: StatutCommande.Livree });
 afficherEtat({ id: 2, statut: StatutCommande.Expediee });
+
+// Exercice 2 : Classes et Encapsulation
+
+interface Livre{
+    titre: string;
+    auteur: string;
+}
+
+class Bibliotheque {
+    private catalogue: Livre[] = [];
+
+    public ajouterLivre(livre: Livre): void {
+        this.catalogue.push(livre);
+    }
+
+    public obtenirCatalogue(): Livre[] {
+        return this.catalogue;
+    }
+}
+
+const maBibliotheque = new Bibliotheque();
+maBibliotheque.ajouterLivre({ titre: "1984", auteur: "George Orwell" });
+maBibliotheque.ajouterLivre({ titre: "Le Petit Prince", auteur: "Antoine de Saint-Exupéry" });
+//console.log(maBibliotheque.catalogue); // Erreur : Propriété 'catalogue' est privée et n'est accessible que dans la classe 'Bibliotheque'.
+console.log(maBibliotheque.obtenirCatalogue());

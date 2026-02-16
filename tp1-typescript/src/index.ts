@@ -34,6 +34,10 @@ function saluer(prenom: string, titre? : string): string {
 
 console.log(saluer("Maxime", "M"));
 
+function formaterID(id: number | string): string {
+    return `ID: ${id.toString()}`;
+}
+
 // 5. Challenge : Modélisation (Préparation Projet Final)
 
 interface IEquipement {

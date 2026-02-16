@@ -66,3 +66,14 @@ const boiteAString = new Boite<string>("Bonjour");
 const boiteANumber = new Boite<number>(42);
 console.log(boiteAString.regarder());
 console.log(boiteANumber.regarder());
+
+// Exercice 4 : Les "Utility Types" (Bonus)
+
+function mettreAJourLivre(livre : Livre, modification: Partial<Livre>): Livre {
+    return { ...livre, ...modification };
+}
+
+const livreOriginal: Livre = { titre: "1900", auteur: "Livre de maxime" };
+
+const livreModifie = mettreAJourLivre(livreOriginal, { titre: "test" });
+console.log(livreModifie);

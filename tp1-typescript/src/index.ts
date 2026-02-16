@@ -6,7 +6,7 @@ let estAdherent : boolean = true;
 
 // age = "25"; // Erreur de type : Type 'string' is not assignable to type 'number'.
 
-let score : 10; // let score : number 
+let score = 10; // let score : number 
 
 // Exercice 2 : Tableaux et Tuples
 

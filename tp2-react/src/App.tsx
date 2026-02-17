@@ -1,14 +1,27 @@
 // src/App.tsx
+import { Routes, Route, Link } from 'react-router-dom';
 // Un composant React est juste une fonction qui retourne du "HTML"
-function App() {
+const Home = () => <h2>Page d'accueil</h2>;
+const Library = () => <h2>Ma Bibliothèque</h2>;
 
-  const prenom = "Maxime";
-// Cette syntaxe (HTML dans du JS), c'est du JSX, plus précisément TSX ici.
+function App() {
 return (
-  <div style={{ textAlign: 'center', marginTop: '50px' }}>
-    <h1>Hello {prenom}</h1>
-    <p>Mon premier composant React fonctionne.</p>
+  <div>
+    <nav style={{ padding: '20px', background: '#eee' }}>
+      {/* TODO : Utilisez le composant Link pour naviguer sans rechargement */}
+      <Link to="/">Accueil</Link> | <Link to="/library">Livres</Link>
+    </nav>
+    <main style={{ padding: '20px' }}>
+      {/* TODO : Utilisez Routes comme conteneur et Route pour chaque chemin */}
+      <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/library" element={<Library />} />
+      {/* CHALLENGE : Comment gérer une erreur 404 (URL inconnue) ? */}
+      <Route path="*" element={<h2>Erreur 404 : Page introuvable</h2>} />
+      </Routes>
+    </main>
   </div>
 );
 }
+
 export default App;

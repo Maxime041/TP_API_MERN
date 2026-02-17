@@ -1,8 +1,27 @@
 // src/App.tsx
+import { useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 // Un composant React est juste une fonction qui retourne du "HTML"
 const Home = () => <h2>Page d'accueil</h2>;
-const Library = () => <h2>Ma Bibliothèque</h2>;
+const Library = () => {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount(count + 1);
+  }
+
+  const decrement = () => {
+    setCount(count - 1);
+  }
+  return (
+    <div>
+      <h2>Ma Bibliothèque</h2>
+      <p>Compteur : {count}</p>
+      <button onClick={increment}>Incrémenter</button>
+      <button onClick={decrement}>Décrémenter</button>
+    </div>
+  );
+};
 
 function App() {
 return (

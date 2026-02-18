@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
-// 🔐 Remplace <password> par ton vrai mot de passe MongoDB Atlas
-const uri = "mongodb+srv://admin:la94LK6PeN7xWM7L@mernstarter.tsgvnpz.mongodb.net/?appName=MernStarter";
+// Remplace <password> par ton vrai mot de passe MongoDB Atlas
+const uri = "mongodb+srv://admin:<password>@mernstarter.tsgvnpz.mongodb.net/?appName=MernStarter";
 
 async function testConnection() {
   try {
